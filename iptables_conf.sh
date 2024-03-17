@@ -54,23 +54,23 @@ function set_network_rules(){
   #iptables -A PREROUTING -i eth0 -p tcp --dport 443 -m state --state NEW -m nth --counter 0 --every 3 --packet 2 -j DNAT --to-destination 192.168.1.103:443
 
   #transmission
-  iptables -A INPUT -p tcp -i "${net_dev}" --sport 51413 -j ACCEPT
-  iptables -A INPUT -p udp -i "${net_dev}" --sport 51413 -j ACCEPT
-  iptables -A INPUT -p tcp -i "${net_dev}" --sport 60812 -j ACCEPT
-  iptables -A INPUT -p udp -i "${net_dev}" --sport 60812 -j ACCEPT
-  iptables -A INPUT -p tcp -i "${net_dev}" --dport 51413 -j ACCEPT
-  iptables -A INPUT -p udp -i "${net_dev}" --dport 51413 -j ACCEPT
-  iptables -A INPUT -p tcp -i "${net_dev}" --dport 60812 -j ACCEPT
-  iptables -A INPUT -p udp -i "${net_dev}" --dport 60812 -j ACCEPT
-
-  iptables -A OUTPUT -p tcp -o "${net_dev}" --sport 51413 -j DROP
-  iptables -A OUTPUT -p udp -o "${net_dev}" --sport 51413 -j DROP
-  iptables -A OUTPUT -p tcp -o "${net_dev}" --sport 60812 -j DROP
-  iptables -A OUTPUT -p udp -o "${net_dev}" --sport 60812 -j DROP
-  iptables -A OUTPUT -p tcp -o "${net_dev}" --dport 51413 -j DROP
-  iptables -A OUTPUT -p udp -o "${net_dev}" --dport 51413 -j DROP
-  iptables -A OUTPUT -p tcp -o "${net_dev}" --dport 60812 -j DROP
-  iptables -A OUTPUT -p udp -o "${net_dev}" --dport 60812 -j DROP
+#  iptables -A INPUT -p tcp -i "${net_dev}" --sport 51413 -j ACCEPT
+#  iptables -A INPUT -p udp -i "${net_dev}" --sport 51413 -j ACCEPT
+#  iptables -A INPUT -p tcp -i "${net_dev}" --sport 60812 -j ACCEPT
+#  iptables -A INPUT -p udp -i "${net_dev}" --sport 60812 -j ACCEPT
+#  iptables -A INPUT -p tcp -i "${net_dev}" --dport 51413 -j ACCEPT
+#  iptables -A INPUT -p udp -i "${net_dev}" --dport 51413 -j ACCEPT
+#  iptables -A INPUT -p tcp -i "${net_dev}" --dport 60812 -j ACCEPT
+#  iptables -A INPUT -p udp -i "${net_dev}" --dport 60812 -j ACCEPT
+#
+#  iptables -A OUTPUT -p tcp -o "${net_dev}" --sport 51413 -j DROP
+#  iptables -A OUTPUT -p udp -o "${net_dev}" --sport 51413 -j DROP
+#  iptables -A OUTPUT -p tcp -o "${net_dev}" --sport 60812 -j DROP
+#  iptables -A OUTPUT -p udp -o "${net_dev}" --sport 60812 -j DROP
+#  iptables -A OUTPUT -p tcp -o "${net_dev}" --dport 51413 -j DROP
+#  iptables -A OUTPUT -p udp -o "${net_dev}" --dport 51413 -j DROP
+#  iptables -A OUTPUT -p tcp -o "${net_dev}" --dport 60812 -j DROP
+#  iptables -A OUTPUT -p udp -o "${net_dev}" --dport 60812 -j DROP
 
   #allow loopback communication
   iptables -A INPUT -i lo -j ACCEPT
