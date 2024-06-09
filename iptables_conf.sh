@@ -87,6 +87,9 @@ function set_network_rules(){
   iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
   iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
+  #iptables -A INPUT -s 192.168.124.138 -j ACCEPT
+  #iptables -A OUTPUT -d 192.168.124.138 -j ACCEPT
+
   #Allow Internal Network to External network (if 2 devices exists)
   #iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
 
