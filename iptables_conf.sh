@@ -87,6 +87,11 @@ function set_network_rules(){
   iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
   iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
+  #allow ntp, sntp
+  iptables -A INPUT -p udp --dport 123 -j ACCEPT
+  iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+
+
   #iptables -A INPUT -s 192.168.124.138 -j ACCEPT
   #iptables -A OUTPUT -d 192.168.124.138 -j ACCEPT
 
